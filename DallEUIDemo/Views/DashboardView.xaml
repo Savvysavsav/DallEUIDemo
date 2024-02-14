@@ -16,6 +16,7 @@
     
     <Grid Margin="25, 25, 0, 0"
           RowDefinitions=".1*,.2*,.15*,.45*,.1*">
+        <!--Heading Collection-->
         <Grid Margin="0,0,25,0"
               ColumnDefinitions="*,*">
             <VerticalStackLayout VerticalOptions="Center">
@@ -52,6 +53,7 @@
                    TextColor="#ACB1BB"
                    FontFamily="NexaHeavy"/>
         </VerticalStackLayout>
+        <!--Pofiles Collection-->
         <CollectionView Grid.Row="2"
                         ItemsSource="{Binding Profiles}"
                         VerticalOptions="Center">
@@ -75,7 +77,7 @@
                                 WidthRequest="50">
                             <Image HeightRequest="50"
                                 Source="{Binding ProfileImage}"
-                                   Aspect="Fill"/>
+                                   Aspect="AspectFill"/>
                         </Border>
                         <VerticalStackLayout Grid.Column="1"
                                              VerticalOptions="Center">
@@ -86,7 +88,7 @@
                                    TextColor="White"
                                    VerticalTextAlignment="Center"/>
                             <Label Margin="10,0,0,0"
-                                   FontFamily="NexaExtraLight"
+                                   FontFamily="NexaHeavy"
                                    HorizontalTextAlignment="Start"
                                    Text="{Binding NoPhotos, StringFormat='{0} pictures'}"
                                    TextColor="#869cbd"
@@ -97,39 +99,52 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <!--CoverFlow Collection-->
         <cards:CoverFlowView Grid.Row="3"
-                             Margin="0,0,25,0"
-                             ItemsSource="{Binding GeneratedImages}"
-                             PositionShiftValue="125">
+                            Margin="0,0,25,0"
+                            ItemsSource="{Binding GeneratedImages}"
+                            IsCyclical="False"
+                            PositionShiftPercentage=".25">
             <x:Arguments>
-                <proc:CoverFlowProcessor OpacityFactor=".25"
-                                         ScaleFactor=".75"/>
+                <proc:CoverFlowProcessor OpacityFactor="0.25"
+                                         ScaleFactor="0.75"/>
             </x:Arguments>
             <cards:CoverFlowView.ItemTemplate>
                 <DataTemplate>
-                    <Border StrokeShape="RoundRectangle 25,25,25,25"
-                            StrokeThickness="0">
+                    <Frame CornerRadius="25"
+                           Padding="0"
+                           IsClippedToBounds="true"
+                           HeightRequest="300"
+                           WidthRequest="250"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HasShadow="false">
                         <Grid RowDefinitions=".7*,.3*">
-                            <Image Grid.RowSpan="2"
+                        <Image Grid.RowSpan="2"
                                    Aspect="AspectFill"
-                                   Source="{Binding ImagePath}"/>
-                            <Grid Grid.Row="1">
-                                <Rectangle Fill="Black"
+                                   Source="{Binding ImagePath}"
+                                   WidthRequest="250"
+                                   HeightRequest="300"/>
+
+                        <Grid Grid.Row="1">
+                            <Rectangle Fill="Black"
                                            Opacity=".5"
-                                           StrokeThickness="0"/>
-                                <VerticalStackLayout Margin="10,0,0,0"
-                                                     VerticalOptions="Center">
-                                    <Label FontFamily="NexaHeavy"
+                                           StrokeThickness="0"
+                                           MaximumWidthRequest="250"/>
+                            <VerticalStackLayout Margin="10,0,0,0"
+                                                     VerticalOptions="Center"
+                                                     MaximumWidthRequest="250">
+                                <Label FontFamily="NexaHeavy"
                                            FontSize="25"
                                            Text="{Binding MainKeyword}"
                                            TextColor="White"/>
-                                    <Label FontFamily="NexaExtraLight"
+                                <Label FontFamily="NexaExtraLight"
                                            Text="{Binding Keywords, Converter={StaticResource ListToStringConverter}}"
                                            TextColor="White"/>
-                                </VerticalStackLayout>
-                            </Grid>
+                            </VerticalStackLayout>
                         </Grid>
-                    </Border>
+                    </Grid>
+                    </Frame>
                 </DataTemplate>
             </cards:CoverFlowView.ItemTemplate>
         </cards:CoverFlowView>
