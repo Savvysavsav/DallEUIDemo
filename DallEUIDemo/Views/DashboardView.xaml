@@ -10,7 +10,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <toolkit:ListToStringConverter x:Key="ListToStringConverter" Separator=","/>
+            <toolkit:ListToStringConverter x:Key="ListToStringConverter" Separator=", "/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -157,7 +157,7 @@
             <Button BackgroundColor="#E8FF8e"
                     FontFamily="NexaHeavy"
                     FontSize="16"
-                    Text="Create new Image"
+                    Text="Generate new Image"
                     TextColor="#101216"/>
         </Border>
     </Grid>

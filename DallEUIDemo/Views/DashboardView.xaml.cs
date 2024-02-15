@@ -49,26 +49,26 @@ public partial class DashboardView : ContentPage
 		{
 			new GeneratedImage
 			{
-				ImagePath = "dark_forest.jpg",
-				Keywords = ["Dark","Forest","Green"],
-				MainKeyword = "Forest"
+				ImagePath = "cityscape.jpg",
+				Keywords = ["Dark","City","Anime"],
+				MainKeyword = "Cityscape"
 			},
             new GeneratedImage
             {
-                ImagePath = "forest.jpg",
-                Keywords = ["Dark","Forest","Gold"],
+                ImagePath = "forestscape.jpg",
+                Keywords = ["Fantasy","Forest","Glowing"],
                 MainKeyword = "Forest"
             },
 			new GeneratedImage
             {
-                ImagePath = "forest_fantasy.jpg",
-                Keywords = ["Dark","Forest","Teal"],
-                MainKeyword = "Forest"
+                ImagePath = "desertscape.jpg",
+                Keywords = ["Desert","Stars"],
+                MainKeyword = "Desertscape"
             },
             new GeneratedImage
             {
-                ImagePath = "forest_lifeline.jpg",
-                Keywords = ["Dark","Purple","Green"],
+                ImagePath = "ancientscape.jpg",
+                Keywords = ["Abandoned","Glowing","Fountain"],
                 MainKeyword = "Forest"
             }
         };
