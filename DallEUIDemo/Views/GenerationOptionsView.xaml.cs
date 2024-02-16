@@ -46,4 +46,9 @@ public partial class GenerationOptionsView : ContentPage
             new ArtStyle() {Name="Storybook", ImageURL="storybook.jpg"},
         };
     }
+
+    private void BackButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PopModalAsync();
+    }
 }

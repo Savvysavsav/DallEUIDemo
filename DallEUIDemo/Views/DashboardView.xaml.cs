@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace DallEUIDemo.Views;
 
-public partial class DashboardView : ContentPage
+public partial class DashboardView : ContentPage 
 {
 
 	public ObservableCollection<Profile> Profiles { get; set; }
@@ -74,5 +74,10 @@ public partial class DashboardView : ContentPage
                 MainKeyword = "Forest"
             }
         };
+    }
+
+    private void GeneratedImgViewBtn_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new GenerationOptionsView());
     }
 }
